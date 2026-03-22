@@ -34,6 +34,9 @@ export const Layout: FC = () => {
             <NavLink to={ROUTES.PROFILE} className={linkClass}>
               Profile
             </NavLink>
+            <NavLink to={ROUTES.WIZARD} className={linkClass}>
+              Wizard
+            </NavLink>
             <NavLink to={ROUTES.SIGN_IN} className={linkClass}>
               Sign in
             </NavLink>

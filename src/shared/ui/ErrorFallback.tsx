@@ -5,7 +5,7 @@ export const ErrorFallback = () => {
       <p className="opacity-75">Try refreshing the page.</p>
       <button
         onClick={() => window.location.reload()}
-        className="px-2 py-3 border border-solid"
+        className="border border-solid px-2 py-3"
       >
         Reload
       </button>

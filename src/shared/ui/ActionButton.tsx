@@ -2,7 +2,7 @@ import { type ButtonHTMLAttributes, type FC } from 'react';
 import clsx from 'clsx';
 
 type ActionVariant = 'chip' | 'button' | 'icon';
-type ActionTone = 'neutral' | 'danger';
+type ActionTone = 'neutral' | 'danger' | 'info';
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: ActionVariant;
@@ -30,6 +30,11 @@ const styles = {
     danger: {
       base: 'text-red-600 ring-red-200 hover:bg-red-50',
       active: 'bg-red-600 text-white ring-red-600 hover:bg-red-600',
+    },
+    info: {
+      base: 'w-full rounded-md bg-blue-600 py-2 font-semibold text-white transition hover:bg-blue-700',
+      active:
+        'w-full rounded-md bg-blue-600 py-2 font-semibold text-white transition hover:bg-blue-700 active:scale-95 active:text-blue-700',
     },
   },
 };

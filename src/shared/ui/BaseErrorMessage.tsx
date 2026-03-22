@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 interface Props {
-  errorMessage: string | null;
+  errorMessage?: string | null;
 }
 export const BaseErrorMessage: FC<Props> = ({ errorMessage }) => {
   return (
@@ -8,4 +8,8 @@ export const BaseErrorMessage: FC<Props> = ({ errorMessage }) => {
       Failed to load tasks{errorMessage ? `: ${errorMessage}` : '.'}
     </div>
   );
+};
+
+export const BaseErrorInputMessage: FC<Props> = ({ errorMessage }) => {
+  return <p className="mt-1 text-xs text-red-500">{errorMessage}</p>;
 };
