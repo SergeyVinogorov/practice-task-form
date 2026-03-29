@@ -7,6 +7,7 @@ import {
 import { Layout } from 'app/ui/Layout';
 import { HomePage, ProfilePage, SignIn, SignUp, WizardPage } from 'pages';
 import { ROUTES, RouteError } from 'shared';
+import { ProtectedRoute } from 'shared/ui/ProtectedRoute';
 
 export const appRouter = createBrowserRouter(
   createRoutesFromElements(
@@ -16,7 +17,9 @@ export const appRouter = createBrowserRouter(
       errorElement={<RouteError />}
     >
       <Route index element={<HomePage />} />
-      <Route path={ROUTES.PROFILE} element={<ProfilePage />} />
+      <Route element={<ProtectedRoute />}>
+        <Route path={ROUTES.PROFILE} element={<ProfilePage />} />
+      </Route>
       <Route path={ROUTES.WIZARD} element={<WizardPage />} />
       <Route path={ROUTES.SIGN_IN} element={<SignIn />} />
       <Route path={ROUTES.SIGN_UP} element={<SignUp />} />
