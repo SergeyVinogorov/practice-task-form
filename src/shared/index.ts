@@ -14,3 +14,5 @@ export { Tooltip } from './ui/tooltip/Tooltip';
 export { TooltipPosition } from './ui/tooltip/types';
 export { ConfirmProvider } from './ui/dialog/ConfirmProvider';
 export { useConfirmDialog } from './lib/confimContext';
+export { ThemeProvider } from './ui/ThemeProvider';
+export { useTheme } from './lib/themeContext';
