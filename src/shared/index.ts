@@ -10,3 +10,5 @@ export {
 } from './ui/BaseErrorMessage.tsx';
 export type { User, LocationState } from './model/auth';
 export { TOKEN_KEY, API_URLS } from './constants/auth';
+export { Tooltip } from './ui/tooltip/Tooltip';
+export { TooltipPosition } from './ui/tooltip/types';
