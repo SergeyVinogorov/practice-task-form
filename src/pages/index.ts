@@ -3,3 +3,4 @@ export { SignIn } from './SignIn';
 export { SignUp } from './SignUp';
 export { HomePage } from './HomePage';
 export { WizardPage } from './WizardPage';
+export { PortalShowcase } from './PortalShowcase';
