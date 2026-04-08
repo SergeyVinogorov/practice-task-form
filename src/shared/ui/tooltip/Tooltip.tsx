@@ -12,6 +12,7 @@ import {
   computeTransform,
 } from 'shared/lib/tooltip/computeTooltip.ts';
 import { createPortal } from 'react-dom';
+import { useTheme } from '../../lib/themeContext';
 
 type Props = {
   content: ReactNode;
@@ -26,6 +27,7 @@ export function Tooltip({
   offsetPx = 8,
   children,
 }: Props) {
+  const { theme } = useTheme();
   const tooltipId = useId();
   const targetRef = useRef<HTMLElement | null>(null);
 
@@ -57,7 +59,10 @@ export function Tooltip({
 
   if (!root) return children;
 
-  const tooltipClass = 'bg-white text-slate-900 border border-black/10';
+  const tooltipClass =
+    theme === 'dark'
+      ? 'bg-slate-900 text-white border border-white/15'
+      : 'bg-white text-slate-900 border border-black/10';
 
   return (
     <>
