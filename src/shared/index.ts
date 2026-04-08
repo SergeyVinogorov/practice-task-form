@@ -12,3 +12,5 @@ export type { User, LocationState } from './model/auth';
 export { TOKEN_KEY, API_URLS } from './constants/auth';
 export { Tooltip } from './ui/tooltip/Tooltip';
 export { TooltipPosition } from './ui/tooltip/types';
+export { ConfirmProvider } from './ui/dialog/ConfirmProvider';
+export { useConfirmDialog } from './lib/confimContext';
