@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useTheme } from '../../lib/themeContext';
 
 export type ConfirmDialogProps = {
   title: string;
@@ -13,6 +14,7 @@ export function ConfirmDialog({
   onConfirm,
   onCancel,
 }: ConfirmDialogProps) {
+  const { theme } = useTheme();
   const confirmRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
@@ -27,7 +29,10 @@ export function ConfirmDialog({
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [onCancel]);
 
-  const panel = 'bg-white text-slate-900 border border-black/10';
+  const panel =
+    theme === 'dark'
+      ? 'bg-slate-900 text-white border border-white/10'
+      : 'bg-white text-slate-900 border border-black/10';
 
   return (
     <div
